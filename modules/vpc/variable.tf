@@ -3,15 +3,18 @@ variable "vpc_name" {
 }
 
 variable "vpc_cidr" {
-  type = string 
+  type = string
 }
 
 variable "public_subnets" {
   type = map(object({ cidr_block = string }))
-  default = []
 }
 
 variable "private_subnets" {
   type = map(object({ cidr_block = string }))
-  default = []
 }
+
+variable "nat_gateway_id" {
+  type = string
+}
+
