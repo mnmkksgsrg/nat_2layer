@@ -1,11 +1,3 @@
-module "nat" {
-  source = "./modules/nat"
-
-  vpc_id             = module.vpc.vpc_id
-  private_subnet_ids = module.vpc.private_subnet_ids
-}
-
-
 module "vpc" {
   source = "./modules/vpc"
 
@@ -14,6 +6,13 @@ module "vpc" {
   nat_gateway_id  = module.nat.nat_gateway_id
   public_subnets  = var.public_subnets
   private_subnets = var.private_subnets
+}
+
+module "nat" {
+  source = "./modules/nat"
+
+  vpc_id             = module.vpc.vpc_id
+  private_subnet_ids = module.vpc.private_subnet_ids
 }
 
 module "security_group" {

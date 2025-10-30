@@ -13,6 +13,6 @@ resource "aws_instance" "this" {
   instance_type               = var.instance_type
   subnet_id                   = var.subnet_id
   vpc_security_group_ids      = var.private_instance_security_group_ids
-  associate_public_ip_address = true
+  associate_public_ip_address = false
 }
 
