@@ -12,7 +12,7 @@ module "nat" {
   source = "./modules/nat"
 
   vpc_id             = module.vpc.vpc_id
-  private_subnet_ids = module.vpc.private_subnet_ids
+  public_subnet_ids = module.vpc.public_subnet_ids
 }
 
 module "security_group" {
